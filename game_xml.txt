@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="0pt"
+            android:adjustViewBounds="true"
+            android:background="@drawable/return_m"
+            android:onClick="mainPg"
+            android:scaleType="fitXY"
+            android:stateListAnimator="@null" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            android:layout_margin="0pt"
+            android:background="@drawable/tatle"
+            android:stateListAnimator="@null"/>
+
+        <ImageButton
+            android:id="@+id/retry"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="0pt"
+            android:adjustViewBounds="true"
+            android:background="@drawable/retry"
+            android:onClick="retryBut"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but11"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c11"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but12"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c12" />
+
+            <Button
+                android:id="@+id/but13"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c13"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but14"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c14" />
+
+            <Button
+                android:id="@+id/but15"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c15" />
+
+            <Button
+                android:id="@+id/but16"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but21"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c21"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but22"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c22" />
+
+            <Button
+                android:id="@+id/but23"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c23"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but24"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c24" />
+
+            <Button
+                android:id="@+id/but25"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c25" />
+
+            <Button
+                android:id="@+id/but26"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c26" />
+
+            <Button
+                android:id="@+id/but27"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c27" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but31"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c31"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but32"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c32" />
+
+            <Button
+                android:id="@+id/but33"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c33"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but34"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c34" />
+
+            <Button
+                android:id="@+id/but35"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c35" />
+
+            <Button
+                android:id="@+id/but36"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c36" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but41"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c41"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but42"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c42" />
+
+            <Button
+                android:id="@+id/but43"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c43"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but44"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c44" />
+
+            <Button
+                android:id="@+id/but45"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c45" />
+
+            <Button
+                android:id="@+id/but46"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c46" />
+
+            <Button
+                android:id="@+id/but47"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c47" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but51"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c51"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but52"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c52" />
+
+            <Button
+                android:id="@+id/but53"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c53"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but54"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c54" />
+
+            <Button
+                android:id="@+id/but55"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c55" />
+
+            <Button
+                android:id="@+id/but56"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c56" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but61"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c61"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but62"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c62" />
+
+            <Button
+                android:id="@+id/but63"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c63"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but64"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c64" />
+
+            <Button
+                android:id="@+id/but65"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c65" />
+
+            <Button
+                android:id="@+id/but66"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c66" />
+
+            <Button
+                android:id="@+id/but67"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c67" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but71"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c71"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but72"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c72" />
+
+            <Button
+                android:id="@+id/but73"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c73"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but74"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c74" />
+
+            <Button
+                android:id="@+id/but75"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c75" />
+
+            <Button
+                android:id="@+id/but76"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c76" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but81"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c81"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but82"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c82" />
+
+            <Button
+                android:id="@+id/but83"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c83"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but84"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c84" />
+
+            <Button
+                android:id="@+id/but85"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c85" />
+
+            <Button
+                android:id="@+id/but86"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c86" />
+
+            <Button
+                android:id="@+id/but87"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c87" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but91"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c91"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but92"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c92" />
+
+            <Button
+                android:id="@+id/but93"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c93"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but94"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c94" />
+
+            <Button
+                android:id="@+id/but95"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c95" />
+
+            <Button
+                android:id="@+id/but96"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c96" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/but101"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c101"
+                android:scaleType="fitXY"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but102"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pok1"
+                android:onClick="c102" />
+
+            <Button
+                android:id="@+id/but103"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c103"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/but104"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c104" />
+
+            <Button
+                android:id="@+id/but105"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c105" />
+
+            <Button
+                android:id="@+id/but106"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c106" />
+
+            <Button
+                android:id="@+id/but107"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_margin="0pt"
+                android:layout_weight="0"
+                android:background="@drawable/pok1"
+                android:onClick="c107" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="score : "
+            android:textColor="#000000"
+            android:textSize="25dp" />
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_weight="0"
+            android:textColor="#ff3a51"
+            android:textSize="25dp" />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="time : "
+            android:textColor="#000000"
+            android:textSize="25dp" />
+        <TextView
+            android:id="@+id/timerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:layout_weight="0"
+            android:textColor="#683aff"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+</LinearLayout>

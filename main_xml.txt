@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="380dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/tatle1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.45"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/startCk"
+            android:layout_width="260dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:background="@drawable/start"
+            android:onClick="start" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/exitCk"
+            android:layout_width="260dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:background="@drawable/exit"
+            android:onClick="exit" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+</LinearLayout>

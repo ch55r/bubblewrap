@@ -1,0 +1,542 @@
+package kr.co.sora.bubblewrap;
+
+import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+
+public class game extends BaseActivity {
+    Button b[][] = new Button[10][7];//세로 가로
+    Drawable p1;
+    Drawable p2;
+    int score=0;
+    String sEll;
+    int board[][] = new int[10][7];
+    SoundPool sound_pok;
+    int pokSoundID;
+    SoundPool sound_return;
+    int returnSoundID;
+    SoundPool sound_push;
+    int pushSoundID;
+    TextView sctv;
+    TextView mEllapse;
+    long mBaseTime;
+    long mPauseTime;
+    int check = 0;
+    private long lastTimeBackPressed;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game);
+        {
+            b[0][0] = (Button) findViewById(R.id.but11);
+            b[0][1] = (Button) findViewById(R.id.but12);
+            b[0][2] = (Button) findViewById(R.id.but13);
+            b[0][3] = (Button) findViewById(R.id.but14);
+            b[0][4] = (Button) findViewById(R.id.but15);
+            b[0][5] = (Button) findViewById(R.id.but16);
+
+            b[1][0] = (Button) findViewById(R.id.but21);
+            b[1][1] = (Button) findViewById(R.id.but22);
+            b[1][2] = (Button) findViewById(R.id.but23);
+            b[1][3] = (Button) findViewById(R.id.but24);
+            b[1][4] = (Button) findViewById(R.id.but25);
+            b[1][5] = (Button) findViewById(R.id.but26);
+            b[1][6] = (Button) findViewById(R.id.but27);
+
+            b[2][0] = (Button) findViewById(R.id.but31);
+            b[2][1] = (Button) findViewById(R.id.but32);
+            b[2][2] = (Button) findViewById(R.id.but33);
+            b[2][3] = (Button) findViewById(R.id.but34);
+            b[2][4] = (Button) findViewById(R.id.but35);
+            b[2][5] = (Button) findViewById(R.id.but36);
+
+            b[3][0] = (Button) findViewById(R.id.but41);
+            b[3][1] = (Button) findViewById(R.id.but42);
+            b[3][2] = (Button) findViewById(R.id.but43);
+            b[3][3] = (Button) findViewById(R.id.but44);
+            b[3][4] = (Button) findViewById(R.id.but45);
+            b[3][5] = (Button) findViewById(R.id.but46);
+            b[3][6] = (Button) findViewById(R.id.but47);
+
+            b[4][0] = (Button) findViewById(R.id.but51);
+            b[4][1] = (Button) findViewById(R.id.but52);
+            b[4][2] = (Button) findViewById(R.id.but53);
+            b[4][3] = (Button) findViewById(R.id.but54);
+            b[4][4] = (Button) findViewById(R.id.but55);
+            b[4][5] = (Button) findViewById(R.id.but56);
+
+            b[5][0] = (Button) findViewById(R.id.but61);
+            b[5][1] = (Button) findViewById(R.id.but62);
+            b[5][2] = (Button) findViewById(R.id.but63);
+            b[5][3] = (Button) findViewById(R.id.but64);
+            b[5][4] = (Button) findViewById(R.id.but65);
+            b[5][5] = (Button) findViewById(R.id.but66);
+            b[5][6] = (Button) findViewById(R.id.but67);
+
+            b[6][0] = (Button) findViewById(R.id.but71);
+            b[6][1] = (Button) findViewById(R.id.but72);
+            b[6][2] = (Button) findViewById(R.id.but73);
+            b[6][3] = (Button) findViewById(R.id.but74);
+            b[6][4] = (Button) findViewById(R.id.but75);
+            b[6][5] = (Button) findViewById(R.id.but76);
+
+            b[7][0] = (Button) findViewById(R.id.but81);
+            b[7][1] = (Button) findViewById(R.id.but82);
+            b[7][2] = (Button) findViewById(R.id.but83);
+            b[7][3] = (Button) findViewById(R.id.but84);
+            b[7][4] = (Button) findViewById(R.id.but85);
+            b[7][5] = (Button) findViewById(R.id.but86);
+            b[7][6] = (Button) findViewById(R.id.but87);
+
+            b[8][0] = (Button) findViewById(R.id.but91);
+            b[8][1] = (Button) findViewById(R.id.but92);
+            b[8][2] = (Button) findViewById(R.id.but93);
+            b[8][3] = (Button) findViewById(R.id.but94);
+            b[8][4] = (Button) findViewById(R.id.but95);
+            b[8][5] = (Button) findViewById(R.id.but96);
+
+            b[9][0] = (Button) findViewById(R.id.but101);
+            b[9][1] = (Button) findViewById(R.id.but102);
+            b[9][2] = (Button) findViewById(R.id.but103);
+            b[9][3] = (Button) findViewById(R.id.but104);
+            b[9][4] = (Button) findViewById(R.id.but105);
+            b[9][5] = (Button) findViewById(R.id.but106);
+            b[9][6] = (Button) findViewById(R.id.but107);
+
+        }
+        sctv = (TextView) findViewById(R.id.scoreTextView);
+        mEllapse = (TextView) findViewById(R.id.timerTv);
+        sound_pok = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+        pokSoundID = sound_pok.load(this, R.raw.tok, 1); // R.raw.sound에서 "sound"는 사운드 파일명
+        sound_return = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+        returnSoundID = sound_return.load(this, R.raw.return_effect, 1); // R.raw.sound에서 "sound"는 사운드 파일명
+        sound_push = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+        pushSoundID = sound_push.load(this, R.raw.push_effect, 1);
+
+        p1 = ContextCompat.getDrawable(this, R.drawable.pok1);
+        p2 = ContextCompat.getDrawable(this, R.drawable.pok2);
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 7; j++) {
+                board[i][j] = 0;
+            }
+        }
+
+        mBaseTime = SystemClock.elapsedRealtime();
+        mTimer.sendEmptyMessage(0);
+    }
+
+    Handler mTimer = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            mEllapse.setText(getEllapse());
+            mTimer.sendEmptyMessage(0);
+        };
+    };
+    @Override
+    protected void onDestroy() {
+        mTimer.removeMessages(0);
+        super.onDestroy();
+    }
+
+    String getEllapse() {
+        long nowt = SystemClock.elapsedRealtime();
+        long ell = nowt - mBaseTime;
+        sEll = String.format("%02d:%02d:%02d", ell / 1000 / 60 / 60, ell / 1000 / 60, (ell / 1000) % 60);
+        return sEll;
+    }
+
+    public void c11(View v) {
+        imageChange(b[0][0], 0, 0);
+    }
+
+    public void c12(View v) {
+        imageChange(b[0][1], 0, 1);
+    }
+
+    public void c13(View v) {
+        imageChange(b[0][2], 0, 2);
+    }
+
+    public void c14(View v) {
+        imageChange(b[0][3], 0, 3);
+    }
+
+    public void c15(View v) {
+        imageChange(b[0][4], 0, 4);
+    }
+
+    public void c16(View v) {
+        imageChange(b[0][5], 0, 5);
+    }
+
+    public void c21(View v) {
+        imageChange(b[1][0], 1, 0);
+    }
+
+    public void c22(View v) {
+        imageChange(b[1][1], 1, 1);
+    }
+
+    public void c23(View v) {
+        imageChange(b[1][2], 1, 2);
+    }
+
+    public void c24(View v) {
+        imageChange(b[1][3], 1, 3);
+    }
+
+    public void c25(View v) {
+        imageChange(b[1][4], 1, 4);
+    }
+
+    public void c26(View v) {
+        imageChange(b[1][5], 1, 5);
+    }
+
+    public void c27(View v) {
+        imageChange(b[1][6], 1, 6);
+    }
+
+    public void c31(View v) {
+        imageChange(b[2][0], 2, 0);
+    }
+
+    public void c32(View v) {
+        imageChange(b[2][1], 2, 1);
+    }
+
+    public void c33(View v) {
+        imageChange(b[2][2], 2, 2);
+    }
+
+    public void c34(View v) {
+        imageChange(b[2][3], 2, 3);
+    }
+
+    public void c35(View v) {
+        imageChange(b[2][4], 2, 4);
+    }
+
+    public void c36(View v) {
+        imageChange(b[2][5], 2, 5);
+    }
+
+    public void c41(View v) {
+        imageChange(b[3][0], 3, 0);
+    }
+
+    public void c42(View v) {
+        imageChange(b[3][1], 3, 1);
+    }
+
+    public void c43(View v) {
+        imageChange(b[3][2], 3, 2);
+    }
+
+    public void c44(View v) {
+        imageChange(b[3][3], 3, 3);
+    }
+
+    public void c45(View v) {
+        imageChange(b[3][4], 3, 4);
+    }
+
+    public void c46(View v) {
+        imageChange(b[3][5], 3, 5);
+    }
+
+    public void c47(View v) {
+        imageChange(b[3][6], 3, 6);
+    }
+
+    public void c51(View v) {
+        imageChange(b[4][0], 4, 0);
+    }
+
+    public void c52(View v) {
+        imageChange(b[4][1], 4, 1);
+    }
+
+    public void c53(View v) {
+        imageChange(b[4][2], 4, 2);
+    }
+
+    public void c54(View v) {
+        imageChange(b[4][3], 4, 3);
+    }
+
+    public void c55(View v) {
+        imageChange(b[4][4], 4, 4);
+    }
+
+    public void c56(View v) {
+        imageChange(b[4][5], 4, 5);
+    }
+
+    public void c61(View v) {
+        imageChange(b[5][0], 5, 0);
+    }
+
+    public void c62(View v) {
+        imageChange(b[5][1], 5, 1);
+    }
+
+    public void c63(View v) {
+        imageChange(b[5][2], 5, 2);
+    }
+
+    public void c64(View v) {
+        imageChange(b[5][3], 5, 3);
+    }
+
+    public void c65(View v) {
+        imageChange(b[5][4], 5, 4);
+    }
+
+    public void c66(View v) {
+        imageChange(b[5][5], 5, 5);
+    }
+
+    public void c67(View v) {
+        imageChange(b[5][6], 5, 6);
+    }
+
+    public void c71(View v) {
+        imageChange(b[6][0], 6, 0);
+    }
+
+    public void c72(View v) {
+        imageChange(b[6][1], 6, 1);
+    }
+
+    public void c73(View v) {
+        imageChange(b[6][2], 6, 2);
+    }
+
+    public void c74(View v) {
+        imageChange(b[6][3], 6, 3);
+    }
+
+    public void c75(View v) {
+        imageChange(b[6][4], 6, 4);
+    }
+
+    public void c76(View v) {
+        imageChange(b[6][5], 6, 5);
+    }
+
+    public void c81(View v) {
+        imageChange(b[7][0], 7, 0);
+    }
+
+    public void c82(View v) {
+        imageChange(b[7][1], 7, 1);
+    }
+
+    public void c83(View v) {
+        imageChange(b[7][2], 7, 2);
+    }
+
+    public void c84(View v) {
+        imageChange(b[7][3], 7, 3);
+    }
+
+    public void c85(View v) {
+        imageChange(b[7][4], 7, 4);
+    }
+
+    public void c86(View v) {
+        imageChange(b[7][5], 7, 5);
+    }
+
+    public void c87(View v) {
+        imageChange(b[7][6], 7, 6);
+    }
+
+    public void c91(View v) {
+        imageChange(b[8][0], 8, 0);
+    }
+
+    public void c92(View v) {
+        imageChange(b[8][1], 8, 1);
+    }
+
+    public void c93(View v) {
+        imageChange(b[8][2], 8, 2);
+    }
+
+    public void c94(View v) {
+        imageChange(b[8][3], 8, 3);
+    }
+
+    public void c95(View v) {
+        imageChange(b[8][4], 8, 4);
+    }
+
+    public void c96(View v) {
+        imageChange(b[8][5], 8, 5);
+    }
+
+    public void c101(View v) {
+        imageChange(b[9][0], 9, 0);
+    }
+
+    public void c102(View v) {
+        imageChange(b[9][1], 9, 1);
+    }
+
+    public void c103(View v) {
+        imageChange(b[9][2], 9, 2);
+    }
+
+    public void c104(View v) {
+        imageChange(b[9][3], 9, 3);
+    }
+
+    public void c105(View v) {
+        imageChange(b[9][4], 9, 4);
+    }
+
+    public void c106(View v) {
+        imageChange(b[9][5], 9, 5);
+    }
+
+    public void c107(View v) {
+        imageChange(b[9][6], 9, 6);
+    }
+
+
+    public void imageChange(Button b, int c, int r) {
+        if (board[c][r] == 0) {
+            b.setBackground(ContextCompat.getDrawable(this, R.drawable.pok2));
+            sound_pok.play(pokSoundID, 1, 1, 0, 0, 1);
+            board[c][r] = 1;
+            score = score + 1;
+            String scst = Integer.toString(score);
+            sctv.setText(scst);
+        }
+    }
+
+    public void retryBut(View v) {
+        sound_return.play(returnSoundID, 1, 1, 0, 0, 1);
+        for (int j = 0; j < 10; j++) {
+            for (int i = 0; i < 7; i++) {
+                if (j % 2 == 0 && i == 6)
+                    break;
+                else {
+                    b[j][i].setBackground(ContextCompat.getDrawable(this, R.drawable.pok1));
+                    board[j][i] = 0;
+                }
+            }
+        }
+    }
+    public void mainPg(View v)
+    {
+        sound_push.play(pushSoundID,1,1,0,0,1);
+        mTimer.removeMessages(0);
+        mPauseTime = SystemClock.elapsedRealtime();
+
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(game.this);
+
+        // 제목셋팅
+        alertDialogBuilder.setTitle("Bubble Wrap");
+
+        // AlertDialog 셋팅
+        alertDialogBuilder
+                .setMessage("\n터트린 갯수 : " + score + "\n머무른 시간 : " + sEll + "\n\n메인 화면으로 이동하시겠습니까?")
+                .setCancelable(true)
+                .setPositiveButton("이동",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialog, int id) {
+                                {
+                                    finish();
+                                }
+
+                            }
+                        })
+                .setNegativeButton("취소",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+
+                                    DialogInterface dialog, int id) {
+                                // 다이얼로그를 취소한다
+                                long now=SystemClock.elapsedRealtime();
+                                mBaseTime+=(now-mPauseTime);
+                                mTimer.sendEmptyMessage(0);
+                                dialog.cancel();
+                            }
+                        });
+
+        // 다이얼로그 생성
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // 다이얼로그 보여주기
+        alertDialog.show();
+
+    }
+    public void onBackPressed() {
+        sound_push.play(pushSoundID,1,1,0,0,1);
+        mTimer.removeMessages(0);
+        mPauseTime = SystemClock.elapsedRealtime();
+
+        if (System.currentTimeMillis() -lastTimeBackPressed<1500)
+        {   moveTaskToBack(true);
+            finish();
+            android.os.Process.killProcess(android.os.Process.myPid());
+            return;}
+ //       Toast.makeText(this,"뒤로 버튼을 한번 더 누르면 종료됩니다",Toast.LENGTH_SHORT).show();
+        lastTimeBackPressed = System.currentTimeMillis();
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(game.this);
+
+        // 제목셋팅
+        alertDialogBuilder.setTitle("Bubble Wrap");
+
+        // AlertDialog 셋팅
+        alertDialogBuilder
+                .setMessage("\n터트린 갯수 : " + score + "\n머무른 시간 : " + sEll + "\n\n뽁뽁이 앱을 종료하시겠습니까?")
+                .setCancelable(true)
+                .setPositiveButton("종료",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialog, int id) {
+                                moveTaskToBack(true);
+                                finish();
+                                android.os.Process.killProcess(android.os.Process.myPid());
+                            }
+                        })
+                .setNegativeButton("취소",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+
+                                    DialogInterface dialog, int id) {
+                                long now=SystemClock.elapsedRealtime();
+                                mBaseTime+=(now-mPauseTime);
+                                mTimer.sendEmptyMessage(0);
+                                dialog.cancel();
+                            }
+                        });
+
+        // 다이얼로그 생성
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // 다이얼로그 보여주기
+        alertDialog.show();
+
+    }
+}
+
+
+
